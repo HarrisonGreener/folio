@@ -58,12 +58,12 @@ const Holdings: React.FC<Props> = ({ userData, onBack, onManageConnections }) =>
         <Card className="bg-charcoal dark:bg-charcoal-lighter text-stone border-none p-8 flex flex-col justify-between h-44 shadow-2xl relative overflow-hidden group">
           <div className="absolute top-0 right-0 w-24 h-24 bg-white/5 rounded-bl-full transition-transform group-hover:scale-110"></div>
           <span className="text-[10px] font-black uppercase tracking-[0.2em] opacity-40">Internal Vaults</span>
-          <p className="text-4xl font-black tracking-tighter">£{totalVaults.toLocaleString()}</p>
+          <p data-fit className="text-4xl font-black tracking-tighter">£{totalVaults.toLocaleString()}</p>
         </Card>
         <Card className="bg-charcoal dark:bg-charcoal-lighter text-stone border-none p-8 flex flex-col justify-between h-44 shadow-2xl relative overflow-hidden group">
           <div className="absolute top-0 right-0 w-24 h-24 bg-rust/10 rounded-bl-full transition-transform group-hover:scale-110"></div>
           <span className="text-[10px] font-black uppercase tracking-[0.2em] text-rust opacity-60">External Links</span>
-          <p className="text-4xl font-black text-rust tracking-tighter">£{totalExternal.toLocaleString()}</p>
+          <p data-fit className="text-4xl font-black text-rust tracking-tighter">£{totalExternal.toLocaleString()}</p>
         </Card>
       </div>
 

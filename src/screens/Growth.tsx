@@ -78,11 +78,11 @@ const Growth: React.FC<Props> = ({ onBack, vault }) => {
         <div className="flex justify-between items-start mb-12 text-stone relative z-10">
           <div>
             <h3 className="text-[10px] font-black uppercase tracking-[0.4em] opacity-40 mb-2">{label}</h3>
-            <p className="text-4xl font-black tracking-tighter text-white">£{chartData[chartData.length-1].strategy.toLocaleString()}</p>
+            <p data-fit className="text-4xl font-black tracking-tighter text-white">£{chartData[chartData.length-1].strategy.toLocaleString()}</p>
           </div>
           <div className="text-right">
             <h3 className="text-[10px] font-black uppercase tracking-[0.4em] opacity-40 mb-2">Cash Baseline</h3>
-            <p className="text-4xl font-black tracking-tighter text-white/20">£{chartData[chartData.length-1].baseline.toLocaleString()}</p>
+            <p data-fit className="text-4xl font-black tracking-tighter text-white/20">£{chartData[chartData.length-1].baseline.toLocaleString()}</p>
           </div>
         </div>
         

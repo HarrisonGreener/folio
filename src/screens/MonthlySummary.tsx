@@ -55,7 +55,7 @@ const MonthlySummary: React.FC<{ onClose: () => void }> = ({ onClose }) => {
             <Info size={20} className="text-rust" />
             <h4 className="text-sm font-black uppercase tracking-widest">Available Now</h4>
           </div>
-          <p className="text-4xl font-black tracking-tighter mb-6 relative z-10">£15,350.40</p>
+          <p data-fit className="text-4xl font-black tracking-tighter mb-6 relative z-10">£15,350.40</p>
           <p className="text-xs text-stone/40 leading-relaxed font-medium relative z-10 antialiased">
             This is your unified position across all Vaults. £2,450 is instant-access. Remaining balance typically clears in 3-5 days.
           </p>

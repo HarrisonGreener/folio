@@ -92,11 +92,11 @@ const Timeline: React.FC<Props> = ({ userData, onBack }) => {
         <div className="p-8 flex justify-between items-start text-stone z-10 relative">
           <div>
             <Label><span className="text-stone/70">Actual Path</span></Label>
-            <p className="text-4xl font-black tracking-tighter">£{totalCurrentBalance.toLocaleString()}</p>
+            <p data-fit className="text-4xl font-black tracking-tighter">£{totalCurrentBalance.toLocaleString()}</p>
           </div>
           <div className="text-right">
             <Label><span className="text-stone/40">Plan Baseline</span></Label>
-            <p className="text-4xl font-black opacity-30 tracking-tighter">£{(totalCurrentBalance * 0.96).toLocaleString()}</p>
+            <p data-fit className="text-4xl font-black opacity-30 tracking-tighter">£{(totalCurrentBalance * 0.96).toLocaleString()}</p>
           </div>
         </div>
         
