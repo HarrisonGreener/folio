@@ -63,7 +63,7 @@ export const Page: React.FC<{ children: React.ReactNode; id: string }> = ({ chil
   <motion.div
     key={id}
     initial={{ opacity: 0, y: 14, filter: 'blur(6px)' }}
-    animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+    animate={{ opacity: 1, y: 0, filter: 'blur(0px)', transitionEnd: { filter: 'none', transform: 'none' } }}
     exit={{ opacity: 0, y: -6, filter: 'blur(4px)', transition: { duration: 0.22, ease: EASE } }}
     transition={{ duration: 0.55, ease: EASE }}
   >

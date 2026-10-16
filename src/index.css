@@ -82,3 +82,62 @@ input[type='number'] { -moz-appearance: textfield; }
     transition-duration: 0.01ms !important;
   }
 }
+
+/* =====================================================================
+   Demo shell: phone frame + demo shortcuts (same pattern as Stack)
+   ===================================================================== */
+:root { --stage: #E8E7E2; --surface: #FFFFFF; --line: rgba(15, 13, 14, 0.10); --muted: #666666; --fg: #0F0D0E; }
+.dark { --stage: #080707; --surface: #151314; --line: rgba(251, 251, 250, 0.08); --muted: #8F8A87; --fg: #FBFBFA; }
+
+html.folio-framed, html.folio-framed body { height: 100%; overflow: hidden; }
+html.folio-framed body { background: var(--stage); }
+
+.folio-wrap { min-height: 100%; height: 100%; display: flex; align-items: center; justify-content: center; gap: 56px; padding-inline: 24px; }
+html:not(.folio-framed) .folio-wrap { display: block; padding: 0; height: auto; }
+
+.folio-side { width: 280px; display: flex; flex-direction: column; gap: 18px; color: var(--fg); }
+.folio-side p { color: var(--muted); line-height: 1.55; margin: 0; font-size: 14px; max-width: 34ch; }
+.folio-side .folio-pitch { color: var(--fg); font-size: 19px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.25; }
+.folio-side .folio-note { font-size: 11px; letter-spacing: 0.02em; }
+.folio-brand { display: flex; align-items: center; gap: 14px; }
+.folio-word { position: relative; display: inline-block; font-size: 38px; font-weight: 900; letter-spacing: -0.044em; line-height: 1; }
+.folio-bar { position: absolute; background: #B3593B; left: -0.075em; top: 0.2em; width: 0.13em; height: 0.71em; }
+.folio-lbl { font-size: 10.5px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.25em; color: var(--muted); }
+.folio-jump { display: flex; flex-direction: column; gap: 6px; max-height: calc(100vh - 380px); overflow-y: auto; scrollbar-width: none; }
+.folio-jump::-webkit-scrollbar { display: none; }
+.folio-jump button { text-align: left; padding: 10px 14px; border-radius: 14px; background: var(--surface); border: 1px solid var(--line); font-size: 14px; font-weight: 600; color: var(--fg);
+  display: flex; justify-content: space-between; align-items: center; transition: border-color .3s cubic-bezier(.16,1,.3,1), transform .3s cubic-bezier(.16,1,.3,1), background .3s; cursor: pointer; }
+.folio-jump button:hover { border-color: #B3593B; transform: translateX(2px); }
+.folio-jump button[aria-current="page"] { border-color: #B3593B; background: rgba(179, 89, 59, 0.12); color: #B3593B; }
+.folio-jump button span { color: var(--muted); font-size: 11px; font-weight: 700; letter-spacing: 0.08em; font-variant-numeric: tabular-nums; }
+.folio-jump button[aria-current="page"] span { color: #B3593B; }
+
+.folio-fab { display: none; position: fixed; left: 12px; top: calc(12px + env(safe-area-inset-top, 0px)); z-index: 300; padding: 9px 14px; border-radius: 999px; background: var(--fg); color: var(--stage);
+  font-size: 13px; font-weight: 700; box-shadow: 0 6px 20px rgba(0,0,0,.3); border: 0; cursor: pointer; }
+
+@media (max-width: 1000px) { .folio-wrap { gap: 28px; } .folio-side { width: 240px; } }
+@media (max-width: 760px) {
+  .folio-side { display: none; position: fixed; left: 12px; top: calc(58px + env(safe-area-inset-top, 0px)); z-index: 300; width: min(280px, calc(100vw - 24px));
+    max-height: calc(100vh - 80px); overflow: auto; padding: 16px; border-radius: 18px; background: var(--surface); border: 1px solid var(--line); box-shadow: 0 20px 50px rgba(0,0,0,.35); }
+  .folio-side.open { display: flex; }
+  .folio-side .folio-brand, .folio-side > p:not(.folio-note) { display: none; }
+  .folio-jump { max-height: none; }
+  .folio-fab { display: block; }
+}
+
+.folio-stage { position: relative; flex: none; }
+.folio-phone { position: absolute; left: 0; top: 0; width: 390px; height: 844px; transform-origin: 0 0; background: var(--bg-color); border-radius: 54px; overflow: hidden; isolation: isolate;
+  box-shadow: 0 0 0 11px #0b0b0b, 0 0 0 12px #2a2a2a, 0 40px 80px rgba(0,0,0,.35); }
+.folio-phone.full { position: relative; width: 100%; height: auto; min-height: 100vh; border-radius: 0; box-shadow: none; transform: none; overflow: visible; }
+
+.folio-scroll { position: absolute; inset: 0; overflow-y: auto; overflow-x: hidden; }
+.folio-phone.full .folio-scroll { position: static; overflow: visible; }
+
+/* Inside the frame, "screen height" means the phone's height */
+.folio-phone:not(.full) .min-h-screen { min-height: 844px; }
+
+.folio-status { position: absolute; top: 0; left: 0; right: 0; height: 50px; display: flex; justify-content: space-between; align-items: center; padding: 6px 30px 0 38px;
+  font-size: 15px; font-weight: 700; z-index: 200; pointer-events: none; color: var(--text-main); font-variant-numeric: tabular-nums; }
+.folio-island { position: absolute; left: 50%; top: 11px; width: 120px; height: 34px; margin-left: -60px; background: #000; border-radius: 20px; }
+.folio-signal { display: flex; gap: 6px; align-items: center; }
+.folio-signal svg { fill: currentColor; }

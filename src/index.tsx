@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { MotionConfig } from 'framer-motion';
 import App from './App';
+import { DemoShell } from './components/DemoShell';
 import './index.css';
 
 const rootElement = document.getElementById('root');
@@ -22,7 +23,9 @@ const root = ReactDOM.createRoot(rootElement);
 root.render(
   <React.StrictMode>
     <MotionConfig reducedMotion="user" transition={{ ease: [0.16, 1, 0.3, 1] }}>
-      <App />
+      <DemoShell>
+        <App />
+      </DemoShell>
     </MotionConfig>
   </React.StrictMode>
 );

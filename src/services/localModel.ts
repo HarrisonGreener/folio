@@ -14,7 +14,7 @@ export const MODEL_LABEL = 'Qwen 2.5 · on-device';
 let enginePromise: Promise<MLCEngineInterface> | null = null;
 
 export const isLocalAISupported = (): boolean =>
-  typeof navigator !== 'undefined' && 'gpu' in navigator;
+  typeof navigator !== 'undefined' && !!(navigator as Navigator & { gpu?: unknown }).gpu;
 
 export const isModelLoaded = (): boolean => loaded;
 let loaded = false;
