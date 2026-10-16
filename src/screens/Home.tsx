@@ -176,7 +176,7 @@ const Home: React.FC<Props> = ({ userData, setScreen, navigateToVault, showTutor
                    </div>
                    <h3 className="text-[11px] font-black uppercase tracking-[0.5em] text-white/40">Portfolio Architecture</h3>
                 </div>
-                <p className="text-6xl font-black text-white tracking-compressed">
+                <p data-fit className="text-6xl font-black text-white tracking-compressed">
                    £{totalBalance.toLocaleString()}
                 </p>
               </div>

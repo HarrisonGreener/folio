@@ -66,18 +66,18 @@ const Flow: React.FC<Props> = ({ userData, onBack, updateUserData }) => {
       <div className="grid grid-cols-2 gap-5 mb-12">
         <Card className="bg-charcoal dark:bg-charcoal-lighter text-stone border-none p-8 flex flex-col justify-between h-44 shadow-2xl">
           <span className="text-[10px] font-black uppercase tracking-[0.2em] opacity-40">Monthly Revenue</span>
-          <p className="text-4xl font-black tracking-tighter text-green-500">£{totalRevenue.toLocaleString()}</p>
+          <p data-fit className="text-4xl font-black tracking-tighter text-green-500">£{totalRevenue.toLocaleString()}</p>
         </Card>
         <Card className="bg-charcoal dark:bg-charcoal-lighter text-stone border-none p-8 flex flex-col justify-between h-44 shadow-2xl">
           <span className="text-[10px] font-black uppercase tracking-[0.2em] opacity-40">Total Payments</span>
-          <p className="text-4xl font-black text-rust tracking-tighter">£{totalPayments.toLocaleString()}</p>
+          <p data-fit className="text-4xl font-black text-rust tracking-tighter">£{totalPayments.toLocaleString()}</p>
         </Card>
       </div>
 
       <Card className="mb-12 p-10 bg-rust/5 border-rust/10 flex items-center justify-between rounded-[48px]">
         <div>
           <h4 className="text-[11px] font-black text-rust uppercase tracking-[0.4em] mb-2">Disposable Surplus</h4>
-          <p className="text-5xl font-black text-charcoal dark:text-stone tracking-tighter">£{disposable.toLocaleString()}</p>
+          <p data-fit className="text-5xl font-black text-charcoal dark:text-stone tracking-tighter">£{disposable.toLocaleString()}</p>
         </div>
         <div className="w-20 h-20 bg-rust/10 rounded-[32px] flex items-center justify-center text-rust border border-rust/10 shadow-inner">
           <TrendingUp size={40} />

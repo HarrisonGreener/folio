@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { MotionConfig } from 'framer-motion';
 import App from './App';
 import { DemoShell } from './components/DemoShell';
+import { installFitText } from './components/fitText';
 import './index.css';
 
 const rootElement = document.getElementById('root');
@@ -18,6 +19,8 @@ document.addEventListener('pointermove', (e) => {
   el.style.setProperty('--mx', `${e.clientX - r.left}px`);
   el.style.setProperty('--my', `${e.clientY - r.top}px`);
 }, { passive: true });
+
+installFitText(rootElement);
 
 const root = ReactDOM.createRoot(rootElement);
 root.render(

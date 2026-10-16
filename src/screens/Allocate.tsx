@@ -97,7 +97,7 @@ const Allocate: React.FC<Props> = ({ userData, updateUserData, onBack, onExecute
             <Card className="bg-charcoal dark:bg-charcoal-lighter text-stone border-none shadow-2xl p-12 relative overflow-hidden group">
               <div className="absolute top-0 right-0 w-32 h-32 bg-rust/10 rounded-bl-full group-hover:scale-125 transition-transform duration-700"></div>
               <h4 className="text-[10px] font-black uppercase tracking-[0.4em] mb-4 text-stone/60">Salary Pool Available</h4>
-              <p className="text-5xl font-black tracking-tighter mb-10 text-stone">
+              <p data-fit className="text-5xl font-black tracking-tighter mb-10 text-stone">
                 £{(userData.monthlyIncome * (allocation.incomeAllocationPercent/100)).toLocaleString()}
               </p>
               <Button 

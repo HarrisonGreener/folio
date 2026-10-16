@@ -124,13 +124,13 @@ const Timeline: React.FC<Props> = ({ userData, onBack }) => {
       <Card className="mb-12 p-0 bg-charcoal dark:bg-[#080808] border-none min-h-[580px] overflow-hidden shadow-3xl relative rounded-[54px] group/chart">
         <div className="p-12 z-20 relative">
           <div className="flex justify-between items-start mb-4">
-            <div>
+            <div className="min-w-0 flex-1">
               <div className="flex items-center gap-2 mb-2">
                 <span className="text-[11px] font-black uppercase tracking-[0.4em] text-white/40">
                   {activeIndex !== null ? `PROJECTED AT ${activePoint.name}` : 'TOTAL PROJECTED POSITION'}
                 </span>
               </div>
-              <p className="text-7xl font-black tracking-compressed text-white leading-none">
+              <p data-fit className="text-7xl font-black tracking-compressed text-white leading-none">
                 £{activePoint.total.toLocaleString()}
               </p>
               

@@ -142,7 +142,7 @@ const VaultDetail: React.FC<Props> = ({ vault, userData, onBack, setScreen }) =>
           </div>
           
           <div className="flex items-center gap-4 mb-14">
-            <p className="text-8xl font-black text-white tracking-tighter leading-none">£{totalVaultBalance.toLocaleString(undefined, { maximumFractionDigits: 0 })}</p>
+            <p data-fit className="text-8xl font-black text-white tracking-tighter leading-none">£{totalVaultBalance.toLocaleString(undefined, { maximumFractionDigits: 0 })}</p>
             {!isPremiumBonds && (
               <div className="relative group">
                 <div className={`bg-${isCrypto ? '[#B3593B]' : isEquity ? 'green-500' : '[#B3593B]'}/20 text-${isCrypto ? '[#B3593B]' : isEquity ? 'green-500' : '[#B3593B]'} text-[11px] font-black px-4 py-1.5 rounded-full flex items-center gap-1.5 border border-white/5 cursor-pointer`}
