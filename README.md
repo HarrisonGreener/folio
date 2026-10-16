@@ -83,16 +83,6 @@ Nothing here is financial advice. Rates in projections are assumptions, not quot
 
 ---
 
-## Design
-
-Folio follows its own brand guide.
-
-- **Type:** Inter and Inter Black, set at −44 tracking with a 1.4 line height.
-- **Colour:** Ink `#0F0D0E`, Charcoal `#303030`, Copper `#B3593B`, Gold `#EAB308`, Green `#22C55E` and Paper `#FBFBFA`.
-- **Mark:** the FOLIO wordmark with a copper bar set behind the F, plus a standalone F mark for the app icon.
-- **Motion:** screens ease and un-blur into place, balances count up, lists cascade in, and the active tab glides between nav items. Everything respects reduced-motion settings.
-- **Fit:** large figures shrink to fit narrow phones rather than clip, and keep their full size when there's room.
-
 ---
 
 ## Run it locally
@@ -108,11 +98,6 @@ Then open http://localhost:3000. Pushing to `main` builds and deploys to GitHub 
 
 ---
 
-## About me
-
-I'm **Harrison (Harry) Greener**, a designer working across graphic, web and UX/UI, based between Manchester and Brighton. I'm finishing university in 2026 and building a portfolio that shows the whole range: brand, interface, front-end code and physical pieces.
-
-Folio is one of a set of projects. Another is [Stack](https://github.com/HarrisonGreener/stack) ([live demo](https://harrisongreener.github.io/stack/)), an app that turns the records you own into the way you listen.
 
 ---
 
