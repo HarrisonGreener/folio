@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-color: #FBFBFA;
+  --text-main: #0F0D0E;
+  --text-muted: #666666;
+  --card-bg: #FFFFFF;
+  --border-color: rgba(15, 13, 14, 0.08);
+}
+.dark {
+  --bg-color: #0F0D0E;
+  --text-main: #FBFBFA;
+  --text-muted: #A1A1A1;
+  --card-bg: #151314;
+  --border-color: rgba(251, 251, 250, 0.06);
+  color-scheme: dark;
+}
+
+html { background-color: var(--bg-color); }
+
+body {
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  line-height: 1.4;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: 'cv11', 'ss01', 'tnum';
+  overscroll-behavior-y: contain;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  transition: background-color 0.5s cubic-bezier(0.16, 1, 0.3, 1), color 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+@keyframes pulse-subtle {
+  0% { transform: scale(1); opacity: 0.15; }
+  50% { transform: scale(1.1); opacity: 0.4; }
+  100% { transform: scale(1); opacity: 0.15; }
+}
+.pulse-ring { animation: pulse-subtle 4s infinite cubic-bezier(0.45, 0, 0.55, 1); }
+
+input[type='range'] { accent-color: #B3593B; }
+
+/* Remove number spinners for a cleaner money field */
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+input[type='number'] { -moz-appearance: textfield; }
+
+:focus-visible { outline: 2px solid #B3593B; outline-offset: 3px; }
+
+/* Card sheen: a slow highlight that follows hover on interactive cards */
+.folio-sheen { position: relative; isolation: isolate; }
+.folio-sheen::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, -20%), rgba(255, 255, 255, 0.06), transparent 45%);
+  opacity: 0;
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1;
+}
+.folio-sheen:hover::after { opacity: 1; }
+:not(.dark) .folio-sheen::after {
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, -20%), rgba(179, 89, 59, 0.06), transparent 45%);
+}
+
+/* Model download progress shimmer */
+.shimmer-bar {
+  background: linear-gradient(90deg, rgba(179, 89, 59, 0.6) 0%, #D06B48 50%, rgba(179, 89, 59, 0.6) 100%);
+  background-size: 200% 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
