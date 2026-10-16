@@ -17,6 +17,9 @@ const Home: React.FC<Props> = ({ userData, setScreen, navigateToVault, showTutor
   const totalVaults = userData.vaults.reduce((acc, v) => acc + v.balance, 0);
   const totalExternal = userData.externalAssets.reduce((acc, v) => acc + v.value, 0);
   const totalBalance = totalVaults + totalExternal;
+  // Keep long balances inside a phone-width screen (original size up to 4 figures)
+  const netLen = Math.round(totalBalance).toLocaleString('en-GB').length;
+  const netSize = netLen <= 5 ? 'text-8xl' : netLen <= 7 ? 'text-6xl' : 'text-5xl';
   
   const totalExpenses = userData.monthlyExpenses.reduce((acc, e) => acc + e.amount, 0);
   const disposableIncome = userData.monthlyIncome - totalExpenses;
@@ -43,7 +46,7 @@ const Home: React.FC<Props> = ({ userData, setScreen, navigateToVault, showTutor
           
           <div className="flex items-baseline justify-center gap-2">
             <span className="text-3xl font-bold text-charcoal/30 dark:text-stone/20 mb-1 group-hover:text-rust/40 transition-colors">£</span>
-            <h1 className="text-8xl font-black tracking-tight text-charcoal dark:text-stone leading-none">
+            <h1 className={`${netSize} font-black tracking-tight text-charcoal dark:text-stone leading-none transition-[font-size] duration-500`}>
               <AnimatedNumber value={totalBalance} duration={1.6} />
             </h1>
             <span className="text-3xl font-bold text-charcoal/30 dark:text-stone/20 mb-1 group-hover:text-rust/40 transition-colors">.00</span>
