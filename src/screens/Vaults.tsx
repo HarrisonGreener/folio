@@ -64,12 +64,12 @@ const Vaults: React.FC<Props> = ({ userData, onSelectVault, onAddVault }) => {
             <div className="absolute top-0 right-0 w-48 h-48 bg-rust/5 rounded-bl-[120px] -mr-16 -mt-16 group-hover:scale-110 transition-transform duration-700"></div>
             
             <div className="flex justify-between items-start mb-10 relative z-10">
-              <div className="flex items-center gap-4 min-w-0 flex-1">
-                <div className="w-14 h-14 shrink-0 bg-charcoal/5 dark:bg-charcoal-lighter rounded-[24px] flex items-center justify-center border border-charcoal/5 dark:border-white/5 shadow-inner">
+              <div className="flex items-center gap-3 min-w-0 flex-1">
+                <div className="w-12 h-12 shrink-0 bg-charcoal/5 dark:bg-charcoal-lighter rounded-[18px] flex items-center justify-center border border-charcoal/5 dark:border-white/5 shadow-inner">
                   {getIcon(v.type, v.assetClass)}
                 </div>
                 <div className="min-w-0">
-                  <h3 className="text-2xl font-black text-charcoal dark:text-stone tracking-tighter leading-[1.05] mb-1.5 break-words">{v.name}</h3>
+                  <h3 className="text-xl font-black text-charcoal dark:text-stone tracking-tighter leading-[1.1] mb-1.5">{v.name}</h3>
                   <div className="flex gap-2">
                     <Badge variant={v.isInvested ? 'rust' : 'default'}>{v.type}</Badge>
                     {v.assetClass && <span className="text-[9px] font-black uppercase text-charcoal/30 dark:text-stone/30 tracking-[0.2em] self-center">{v.assetClass}</span>}
@@ -77,7 +77,7 @@ const Vaults: React.FC<Props> = ({ userData, onSelectVault, onAddVault }) => {
                 </div>
               </div>
               <div className="text-right shrink-0 pl-3">
-                <p className="text-3xl font-black text-charcoal dark:text-stone tracking-tighter whitespace-nowrap">£<AnimatedNumber value={v.balance} /></p>
+                <p className="text-2xl font-black text-charcoal dark:text-stone tracking-tighter whitespace-nowrap">£<AnimatedNumber value={v.balance} /></p>
                 {v.change24h !== undefined && (
                   <p className={`text-[10px] font-black uppercase tracking-widest mt-1.5 ${v.change24h >= 0 ? 'text-green-500' : 'text-red-500'}`}>
                     {v.change24h >= 0 ? '+' : ''}{v.change24h}%
