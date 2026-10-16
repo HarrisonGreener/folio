@@ -89,7 +89,7 @@ input[type='number'] { -moz-appearance: textfield; }
 :root { --stage: #E8E7E2; --surface: #FFFFFF; --line: rgba(15, 13, 14, 0.10); --muted: #666666; --fg: #0F0D0E; }
 .dark { --stage: #080707; --surface: #151314; --line: rgba(251, 251, 250, 0.08); --muted: #8F8A87; --fg: #FBFBFA; }
 
-html.folio-framed, html.folio-framed body { height: 100%; overflow: hidden; }
+html.folio-framed, html.folio-framed body, html.folio-framed #root { height: 100%; overflow: hidden; }
 html.folio-framed body { background: var(--stage); }
 
 .folio-wrap { min-height: 100%; height: 100%; display: flex; align-items: center; justify-content: center; gap: 56px; padding-inline: 24px; }
