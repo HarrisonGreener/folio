@@ -2,31 +2,98 @@
 
 **A clear lens for your money.**
 
-Folio is a vision prototype for a clarity-first UK money app. It doesn't hold your cash. It sits over the banks you already use, splits each payday into purpose-built Vault Spaces, and shows where your money is heading.
+Folio is a prototype money app for people whose savings are spread across too many places. It doesn't hold your cash. It sits over the banks and accounts you already use, splits every payday into purpose-built Vault Spaces, and shows you, in one calm view, where your money is and where it's heading.
 
 **Live demo:** https://harrisongreener.github.io/folio/
 
-Design, product and front-end by **Harrison Greener**.
+On a phone it runs full screen like a real app. On a desktop browser it sits in a phone frame, with a panel of demo shortcuts beside it so you can jump straight to any screen.
 
-## What's inside
+<p align="center"><img src="docs/desktop.jpg" width="640" alt="Folio on desktop: the app in a phone frame with demo shortcuts beside it"></p>
 
-- **Onboarding** in four steps: baseline flow, existing balances, commitments and intent.
-- **Home**: portfolio net value, cash-flow analysis, and the portfolio architecture breakdown (Foundation, Accelerators, Frontier).
-- **Vault Spaces**: logic containers for cash, ISAs, Premium Bonds and crypto, with detail views and growth projections.
-- **Allocations**: income splits and round-ups that move money between spaces on payday.
-- **Scope Lens**: describe a goal and get three approaches (stability, balanced, growth), each with a monthly amount, a date and the trade-offs.
-- **Timeline**: projected position across 6 months to 10 years, separating wages from investment growth.
+---
+
+## A look inside
+
+<table>
+<tr><td align="center" valign="top" width="25%"><img src="docs/intro.jpg" width="190"><br><sub>The intro: a clear lens for your money</sub></td><td align="center" valign="top" width="25%"><img src="docs/baseline.jpg" width="190"><br><sub>Onboarding, step 1: your baseline flow</sub></td><td align="center" valign="top" width="25%"><img src="docs/connect.jpg" width="190"><br><sub>Connecting a bank with read-only access</sub></td><td align="center" valign="top" width="25%"><img src="docs/home.jpg" width="190"><br><sub>Home: portfolio net value across every account</sub></td></tr>
+<tr><td align="center" valign="top" width="25%"><img src="docs/architecture.jpg" width="190"><br><sub>Portfolio architecture: Foundation, Accelerators, Frontier</sub></td><td align="center" valign="top" width="25%"><img src="docs/flow.jpg" width="190"><br><sub>Monthly flow: what comes in, what's committed, what's free</sub></td><td align="center" valign="top" width="25%"><img src="docs/allocations.jpg" width="190"><br><sub>Allocations: split each payday automatically</sub></td><td align="center" valign="top" width="25%"><img src="docs/vaults.jpg" width="190"><br><sub>Vault Spaces: one container per intention</sub></td></tr>
+<tr><td align="center" valign="top" width="25%"><img src="docs/isa.jpg" width="190"><br><sub>Inside a vault: value, asset mix and projection</sub></td><td align="center" valign="top" width="25%"><img src="docs/scope-result.jpg" width="190"><br><sub>Scope Lens: three costed plans for a goal</sub></td><td align="center" valign="top" width="25%"><img src="docs/timeline.jpg" width="190"><br><sub>Timeline: where today's habits take you</sub></td><td align="center" valign="top" width="25%"><img src="docs/holdings.jpg" width="190"><br><sub>Portfolio ledger: internal vaults and external holdings</sub></td></tr>
+</table>
+
+Screenshots are from the live demo, using its built-in demo data.
+
+---
+
+## Why I made it
+
+Most people's money doesn't live in one place. There's a current account, an easy-access saver, maybe an ISA, a few Premium Bonds, some crypto in a wallet app. Each one has its own app and its own way of talking about money, so nobody gets the full picture, and "am I actually on track?" is surprisingly hard to answer.
+
+Folio is my answer to that: **don't build another bank, build a lens.** Folio leaves your money where it is and adds a layer of clarity and intent on top. Every pound gets a job, every goal gets a monthly number, and the tone stays calm. No hype, no confetti, no pushing you towards risk.
+
+It's a design prototype and part of my portfolio. It explores the idea, the interface and the experience, and it's honest about what is simulated (see below). Folio also has a full pitch deck.
+
+---
+
+## What the app does
+
+### Getting set up
+- **Four-step onboarding:** your main account balance and income, what you already hold in ISAs, bonds and crypto, your fixed commitments, and what you're aiming for.
+- **Connect your bank:** a read-only connection screen that explains what Folio can and can't do with your data.
+
+### Seeing the whole picture
+- **Home:** your portfolio net value across every account, with disposable capital and commitments side by side.
+- **Portfolio architecture:** tap the net value to see your money in three layers: the **Foundation** (cash and buffers), the **Accelerators** (ISAs and long-term holdings) and the **Frontier** (high-volatility assets).
+- **Monthly flow:** income against payments, so you can see the surplus your plans can actually use.
+- **Portfolio ledger:** internal vaults and external holdings in one list.
+
+### Putting money to work
+- **Vault Spaces:** logic containers for cash, ISAs, Premium Bonds and crypto. They aren't new bank accounts; they organise movements across the accounts you already have.
+- **Vault detail:** value, asset mix, a one-year estimate and a growth projection for each space.
+- **Allocations:** split a share of every payday across your vaults, with round-ups.
+
+### Planning ahead
+- **Scope Lens:** describe a goal ("house deposit, £20,000, 5 years") and get three approaches (stability, balanced and growth), each with a monthly amount, a finish date, the trade-offs and where the money should live.
+- **Timeline:** your projected position from 6 months to 10 years, separating what you earn from what your investments add.
+
+---
 
 ## Scope runs a free, open-source AI model in your browser
 
 Scope's assistant uses [WebLLM](https://github.com/mlc-ai/web-llm) to run **Qwen 2.5 1.5B Instruct** (Apache-2.0) on your own device:
 
-- No API key, no server, no cost.
+- No API key, no server and no cost.
 - Nothing you type leaves your browser.
-- About 1 GB downloads the first time you use Scope, then the browser caches it.
-- Needs WebGPU (desktop Chrome or Edge, recent Safari). Elsewhere, Scope still works and shows exact calculated scenarios.
+- About 1 GB downloads the first time you use Scope; after that the browser keeps it.
+- It needs WebGPU (desktop Chrome or Edge, recent Safari). Anywhere else, Scope still works and shows the calculated plans instantly.
 
-The money figures are always calculated in code (`src/services/scope.ts`); the model writes the explanation around them. That keeps the numbers right even with a small model.
+The pounds and dates are always calculated in code (`src/services/scope.ts`), and the model writes the analysis around them. Small models aren't reliable at arithmetic, so this split keeps every figure right.
+
+---
+
+## What is real and what is simulated
+
+| Real | Simulated |
+|---|---|
+| The interface, navigation, motion and every interaction | Bank connections and account balances |
+| All calculations: allocations, monthly targets, projections | Market data, 24-hour changes and prize draws |
+| The Scope assistant, running a real open-source model in your browser | External wallets and providers (shown with generic names) |
+| The design system from the Folio brand guide | Anything you'd need a regulated bank for |
+
+Nothing here is financial advice. Rates in projections are assumptions, not quotes.
+
+---
+
+## Design
+
+Folio follows its own brand guide.
+
+- **Type:** Inter and Inter Black, set at −44 tracking with a 1.4 line height.
+- **Colour:** Ink `#0F0D0E`, Charcoal `#303030`, Copper `#B3593B`, Gold `#EAB308`, Green `#22C55E` and Paper `#FBFBFA`.
+- **Mark:** the FOLIO wordmark with a copper bar set behind the F, plus a standalone F mark for the app icon.
+- **Motion:** screens ease and un-blur into place, balances count up, lists cascade in, and the active tab glides between nav items. Everything respects reduced-motion settings.
+- **Fit:** large figures shrink to fit narrow phones rather than clip, and keep their full size when there's room.
+
+---
 
 ## Run it locally
 
@@ -35,16 +102,18 @@ npm install
 npm run dev
 ```
 
-Open http://localhost:3000.
+Then open http://localhost:3000. Pushing to `main` builds and deploys to GitHub Pages automatically.
 
-## Stack
-
-React 19, TypeScript, Vite, Tailwind CSS, Framer Motion, Recharts, Lucide icons, WebLLM.
-
-## Brand
-
-Inter and Inter Black (−44 tracking, 1.4 line height). Ink `#0F0D0E`, Charcoal `#303030`, Copper `#B3593B`, Gold `#EAB308`, Green `#22C55E`, Paper `#FBFBFA`.
+**Built with:** React 19, TypeScript, Vite, Tailwind CSS, Framer Motion, Recharts, Lucide icons and WebLLM.
 
 ---
 
-Prototype only. All accounts and figures are simulated. Nothing here is financial advice.
+## About me
+
+I'm **Harrison (Harry) Greener**, a designer working across graphic, web and UX/UI, based between Manchester and Brighton. I'm finishing university in 2026 and building a portfolio that shows the whole range: brand, interface, front-end code and physical pieces.
+
+Folio is one of a set of projects. Another is [Stack](https://github.com/HarrisonGreener/stack) ([live demo](https://harrisongreener.github.io/stack/)), an app that turns the records you own into the way you listen.
+
+---
+
+Vision prototype. All accounts and figures are simulated.
